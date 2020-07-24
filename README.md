@@ -6,9 +6,18 @@
 python file_resize.py folder 500
 ```
 ### example
+- resizeのみの場合
 ```
 python file_resize.py img 500
 ```
 ```
 python file_resize.py img/dataset 400
+```
+
+- resize + rotateをする場合(コード内のコメントアウトを外した状態で)
+```
+python file_resize.py img 500 90
+```
+```
+python file_resize.py img/dataset 400 45
 ```

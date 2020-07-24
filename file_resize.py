@@ -1,5 +1,5 @@
 # coding: utf-8
-#python file_resize.py dir_path(foldername) size
+#python file_resize.py dir_path(foldername) size (angle)
 import os
 import sys
 from PIL import Image, ImageDraw, ImageFilter
@@ -16,6 +16,10 @@ def resize_square(img, background_color):
         result = Image.new(img.mode, (img_height, img_height), background_color)
         result.paste(img, ((img_height - img_width) // 2, 0))
         return result
+        
+def rotate(img, angle):
+    result = img.rotate(angle)
+    return result
 
 
 if __name__ == '__main__':
@@ -26,4 +30,5 @@ if __name__ == '__main__':
             img = Image.open(child_dir + file_name)
             img_width, img_height = img.size
             out = resize_square(img, (0, 0, 0)).resize((int(args[2]), int(args[2])), Image.LANCZOS)
+#            out = rotate(img, int(args[3]))
             out.save(child_dir + file_name, quality=95)

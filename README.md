@@ -5,6 +5,12 @@
 ```
 python file_resize.py folder 500
 ```
+
+### SetUp
+```
+pip install Pillow
+```
+
 ### example
 - resizeのみの場合
 ```
